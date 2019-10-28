@@ -3,6 +3,7 @@ import React from "react";
 import useSimpleAuth from "../hooks/ui/useSimpleAuth";
 import Register from "./auth/Register";
 import Login from "./auth/Login";
+import CreateItem from "./item/CreateItem";
 
 
 const ApplicationViews = () => {
@@ -10,16 +11,16 @@ const ApplicationViews = () => {
 
   return (
     <React.Fragment>
-      {/* <Route
+      <Route
         exact
         path="/"
         render={props => {
-          if (isAuthenticated()) return <HomeProduct {...props} />;
+          if (isAuthenticated()) return <CreateItem {...props} />;
           else return <Redirect to="/login" />
 
 
         }}
-      /> */}
+      />
       <Route
         path="/register"
         render={props => {
