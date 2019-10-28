@@ -10,6 +10,7 @@ const Register = props => {
     const lastName = useRef()
     const password = useRef()
     const firstName = useRef()
+    const phoneNumber = useRef()
     const verifyPassword = useRef()
     const { register } = useSimpleAuth()
 
@@ -21,7 +22,8 @@ const Register = props => {
             "first_name": firstName.current.value,
             "last_name": lastName.current.value,
             "email": email.current.value,
-            "password": password.current.value
+            "password": password.current.value,
+            "phone_number": phoneNumber.current.value
         }
 
         register(newUser).then(() => {
@@ -57,6 +59,13 @@ const Register = props => {
                         name="lastName"
                         className="form-control"
                         placeholder="Last name"
+                        required />
+                </fieldset>
+                <fieldset>
+                    <label htmlFor="phoneNumber"> Phone Number </label>
+                    <input ref={phoneNumber} type="text"
+                        name="phoneNumber"
+                        className="form-control"
                         required />
                 </fieldset>
                 <fieldset>
