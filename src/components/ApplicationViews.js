@@ -4,6 +4,7 @@ import useSimpleAuth from "../hooks/ui/useSimpleAuth";
 import Register from "./auth/Register";
 import Login from "./auth/Login";
 import CreateItem from "./item/CreateItem";
+import Categories from "./categories/Categories";
 
 
 const ApplicationViews = () => {
@@ -16,6 +17,16 @@ const ApplicationViews = () => {
         path="/"
         render={props => {
           if (isAuthenticated()) return <CreateItem {...props} />;
+          else return <Redirect to="/login" />
+
+
+        }}
+      />
+      <Route
+        exact
+        path="/categories"
+        render={props => {
+          if (isAuthenticated()) return <Categories {...props} />;
           else return <Redirect to="/login" />
 
 
