@@ -63,7 +63,7 @@ const CreateItem = props => {
             .then(response => response.json())
             .then(() => {
                 alert("Your Item Has Been Added")
-                props.history.push("/")
+                props.history.push("/categories")
             })
 
     }
