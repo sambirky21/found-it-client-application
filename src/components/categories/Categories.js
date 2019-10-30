@@ -31,7 +31,7 @@ const Categories = () => {
         {categories
           .filter(
             category =>
-              category.item_set.map(cat => {
+              category.organizer_items.map(cat => {
                 return <div key={cat.id}>{cat.name}</div>;
               }).length >= 1
           )
@@ -41,22 +41,22 @@ const Categories = () => {
               <div key={catId}>
             {/* renders item category name */}
                 <h3>
-                <Link to={`/category/${catId}`}>{item.name}</Link> (
+                {item.name} (
                   {
-                    item.item_set.map(item => {
+                    item.organizer_items.map(item => {
                       return <ul>{item.name}</ul>
                       ;
                     }).length
                   }
                   )
                 </h3>
-                {/* renders prouct name by category and uses slice to select indices 0,1,2 in the array */}
+                {/* renders item name by category and uses slice to select indices 0,1,2 in the array */}
                 <ul>
-                  {item.item_set.slice(0, 3).map(item => {
-                    let itemId = +item.url.split("s/")[1];
+                  {item.organizer_items.map(item => {
+                    // let itemId = +item.url.split("s/")[1];
                     return (
-                      <div key={itemId}>
-                        <Link to={`/item/${itemId}`}>{item.name}</Link>
+                      <div key={item.id}>
+                        <Link to={`/item/${item.id}`}>{item.name}</Link>
                       </div>
                     );
                   })}
@@ -70,3 +70,4 @@ const Categories = () => {
 };
 
 export default Categories;
+// slice(0, 3).
