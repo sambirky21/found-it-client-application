@@ -14,7 +14,7 @@ const NavBar = props => {
           <>
             <li className="nav-item">
               <Link className="nav-link" to="/">
-                Home
+                Create an Item
               </Link>
             </li>
             <li className="nav-item">

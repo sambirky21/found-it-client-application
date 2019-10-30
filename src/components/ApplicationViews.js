@@ -5,6 +5,7 @@ import Register from "./auth/Register";
 import Login from "./auth/Login";
 import CreateItem from "./item/CreateItem";
 import Categories from "./categories/Categories";
+import ItemDetails from "./item/ItemDetails"
 
 
 const ApplicationViews = () => {
@@ -30,6 +31,14 @@ const ApplicationViews = () => {
           else return <Redirect to="/login" />
 
 
+        }}
+      />
+      <Route
+        exact
+        path="/item/:itemId(\d+)"
+        render={props => {
+          let itemId = +props.match.params.itemId;
+          return <ItemDetails {...props} itemId={itemId} />;
         }}
       />
       <Route
