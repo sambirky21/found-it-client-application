@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react"
+import ItemEditForm from "./EditDetails"
 
 const ItemDetails = props => {
     //Creat a state variable for single item - useState()
     const [item, setItem] = useState([])
     //Create a state variable for quantity editing later - useState()
 
-    const getItem = (itemId) => {
+    const getItemQuantity = (itemId) => {
         // Fetch the data from localhost:8000/item
         fetch(`http://localhost:8000/items/${itemId}`, {
             "method": "GET",
@@ -24,7 +25,7 @@ const ItemDetails = props => {
     }
     // Create useEffect()
     useEffect(() => {
-        getItem(props.itemId)}, [])
+        getItemQuantity(props.itemId)}, [])
 
     const deleteItem = (id) => {
         fetch(`http://localhost:8000/items/${id}`, {
@@ -52,6 +53,7 @@ const ItemDetails = props => {
                 <button id={item.id} onClick={() => deleteItem(item.id)}
                     >Delete</button>
         </div>
+        <ItemEditForm key={item.id} item={item} getItemQuantity={getItemQuantity}  {...props} />
         </>
     )
 }
