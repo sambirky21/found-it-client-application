@@ -23,6 +23,11 @@ const NavBar = props => {
               </Link>
             </li>
             <li className="nav-item">
+              <Link className="nav-link" to="/items">
+                Items
+              </Link>
+            </li>
+            <li className="nav-item">
               <button
                 className="nav-link fakeLink"
                 onClick={() => {

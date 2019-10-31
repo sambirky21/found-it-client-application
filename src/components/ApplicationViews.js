@@ -6,6 +6,7 @@ import Login from "./auth/Login";
 import CreateItem from "./item/CreateItem";
 import Categories from "./categories/Categories";
 import ItemDetails from "./item/ItemDetails"
+import ItemList from "./item/ItemList"
 
 
 const ApplicationViews = () => {
@@ -39,6 +40,13 @@ const ApplicationViews = () => {
         render={props => {
           let itemId = +props.match.params.itemId;
           return <ItemDetails {...props} itemId={itemId} />;
+        }}
+      />
+      <Route
+        exact
+        path="/items"
+        render={props => {
+          return <ItemList {...props} />;
         }}
       />
       <Route
