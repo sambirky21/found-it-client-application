@@ -120,7 +120,7 @@ const CreateItem = props => {
                             required
                             className="form-control"
                             id="location"
-                            placeholder="location"
+                            placeholder="Location"
                             />
                             </fieldset>
                                 <fieldset>
