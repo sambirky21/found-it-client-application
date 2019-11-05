@@ -50,9 +50,9 @@ const ItemEditForm = props => {
             {/* Edit Quantity Form */}
             <main style={{ textAlign: "center" }}>
             <form className="form--login" onSubmit={handleEdit}>
-                <div className="card">
-                <div className="card-body">
-                <h1 className="card-title h3 mb-3 font-weight-normal">Enter in New Quantity</h1>
+                {/* <div className="card"> */}
+                {/* <div className="card-body"> */}
+                {/* <h1 className="card-title h3 mb-3 font-weight-normal">Enter in New Quantity</h1> */}
                 <fieldset className="form-group">
                     <label htmlFor="quantity">Quantity</label>
                     <input
@@ -67,10 +67,10 @@ const ItemEditForm = props => {
                     />
                 </fieldset>
                 <fieldset>
-                <button type="submit">submit</button>
+                <button type="submit">Submit</button>
                 </fieldset>
-                </div>
-                </div>
+                {/* </div> */}
+                {/* </div> */}
             </form>
             </main>
             </Modal>

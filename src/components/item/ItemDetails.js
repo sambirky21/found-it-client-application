@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import ItemEditForm from "./EditDetails"
+import { Button, Modal } from 'reactstrap';
 
 const ItemDetails = props => {
     //Creat a state variable for single item - useState()
@@ -50,7 +51,7 @@ const ItemDetails = props => {
             <h3>Description: {item.description}</h3>
             <h3>Quantity: {item.quantity}</h3>
 
-                <button id={item.id} onClick={() => deleteItem(item.id)}
+                <button className="btn btn-warning" id={item.id} onClick={() => deleteItem(item.id)}
                     >Delete</button>
         </div>
         <ItemEditForm key={item.id} item={item} getItemQuantity={getItemQuantity}  {...props} />
