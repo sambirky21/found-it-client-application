@@ -45,13 +45,14 @@ const ItemDetails = props => {
     //create HTML representation with JSX
     return (
         <>
-        <h1>Item Details</h1>
+        <h1 className="text-warning" >Item Details</h1>
         <div className="ItemDetails">
-            <h2>Name: {item.name}</h2>
-            <h3>Description: {item.description}</h3>
-            <h3>Quantity: {item.quantity}</h3>
+            <h2 className="text-warning">Name: {item.name}</h2>
+            <h4 className="text-warning">Description: {item.description}</h4>
+            <h4 className="text-warning">Location: {item.location}</h4>
+            <h5 className="text-warning">Quantity: {item.quantity}</h5>
 
-                <button className="btn btn-warning" id={item.id} onClick={() => deleteItem(item.id)}
+                <button className="btn btn-warning text-white" id={item.id} onClick={() => deleteItem(item.id)}
                     >Delete</button>
         </div>
         <ItemEditForm key={item.id} item={item} getItemQuantity={getItemQuantity}  {...props} />
