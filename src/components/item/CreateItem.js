@@ -74,9 +74,9 @@ const CreateItem = props => {
         {/* Form for adding a new Item to sell */}
                 <div>
                     <form>
-                        <h2>Add An Item to Find It Later!</h2>
+                        <h2 className="text-warning">Add An Item to Find It Later!</h2>
                         <fieldset className="form-group">
-                            <label htmlFor="itemName">Item Name</label>
+                            <label className="text-warning" htmlFor="itemName">Item Name</label>
                             <input
                             ref={name}
                             type="text"
@@ -88,7 +88,7 @@ const CreateItem = props => {
                             />
                             </fieldset>
                             <fieldset className="form-group">
-                            <label htmlFor="description">Description</label>
+                            <label className="text-warning" htmlFor="description">Description</label>
                             <input
                             ref={description}
                             type="textarea"
@@ -100,7 +100,7 @@ const CreateItem = props => {
                             />
                             </fieldset>
                             <fieldset className="form-group">
-                            <label htmlFor="quantity">Quantity</label>
+                            <label className="text-warning" htmlFor="quantity">Quantity</label>
                             <input
                             ref={quantity}
                             type="number"
@@ -112,7 +112,7 @@ const CreateItem = props => {
                             />
                             </fieldset>
                             <fieldset className="form-group">
-                            <label htmlFor="location">Location</label>
+                            <label className="text-warning" htmlFor="location">Location</label>
                             <input
                             ref={location}
                             type="text"
@@ -124,9 +124,9 @@ const CreateItem = props => {
                             />
                             </fieldset>
                                 <fieldset>
-                                    <label htmlFor="category">Category:  </label>
+                                    <label className="text-warning" htmlFor="category">Category:  </label>
 
-                                    <select ref={category_value} id = "category-name" name="category" required placeholder="Category">
+                                    <select className="dropdown btn-warning text-white" ref={category_value} id = "category-name" name="category" required placeholder="Category">
                                         {/* Set default option for category dropdown */}
                                         <option value="">Please select a category</option>
                             {
@@ -145,7 +145,7 @@ const CreateItem = props => {
                             <button
                             type="submit"
                             onClick={addNewItem}
-                            className="btn btn-primary"
+                            className="btn btn-warning text-white"
                             >
                             Add Item
                             </button>

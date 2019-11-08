@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react"
 import MyItemCard from "../item/MyItemCard"
-// import "../home/productlist.css"
+import "./MyItemCard.css"
 import useSimpleAuth from "../../hooks/ui/useSimpleAuth"
 
 const ItemList = props => {
@@ -53,11 +53,11 @@ const ItemList = props => {
     return (
         <>
 
-        <label htmlFor="search_items">Search for Items by Name</label><br></br>
-        <input type="search" id="search_input"  ref={search_items} placeholder="Name"/>
+        {/* <label htmlFor="search_items"><h1 class="enclosed" >Search for Items by Name</h1></label><br></br> */}
+        <input className="form-control warning" type="search" id="search_input"  ref={search_items} placeholder="Name"/>
 
-        <button id="search_input" onClick={() =>{fetchItemName()}}>Search</button>
-        <button id="reset" onClick = {() => {getItems()}}>Reset</button>
+        <button className="btn btn-outline-warning text-blue" id="search_input" onClick={() =>{fetchItemName()}}>Search</button>
+        <button className="btn btn-outline-warning" id="reset" onClick = {() => {getItems()}}>Reset</button><br></br><br></br><br></br>
 
 
         {items.length > 0 ?

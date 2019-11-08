@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./Categories.css";
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
@@ -24,7 +26,7 @@ const Categories = () => {
 
   return (
     <>
-      <h2>Categories</h2>
+      {/* <h2>Categories</h2> */}
       <div>
           {/* filters categories for ones with at least one item so
          that categories with no items will display.  */}
@@ -38,9 +40,9 @@ const Categories = () => {
           .map(item => {
             let catId = +item.url.split("s/")[1];
             return (
-              <div key={catId}>
+              <div key={catId} className="card">
             {/* renders item category name */}
-                <h3>
+                <h3 className="enclosed">
                 {item.name} (
                   {
                     item.organizer_items.map(item => {
@@ -51,16 +53,22 @@ const Categories = () => {
                   )
                 </h3>
                 {/* renders item name by category and uses slice to select indices 0,1,2 in the array */}
-                <ul>
+                <li className="textStuff">
                   {item.organizer_items.map(item => {
                     // let itemId = +item.url.split("s/")[1];
                     return (
-                      <div key={item.id}>
-                        <Link to={`/item/${item.id}`}>{item.name}</Link>
+
+                      <div key={item.id} >
+                        <ul>
+                        <Link className="textColor" to={`/item/${item.id}`}>{item.name}</Link><br></br>
+                        </ul>
+
                       </div>
+
+
                     );
                   })}
-                </ul>
+                </li>
               </div>
             );
           })}
